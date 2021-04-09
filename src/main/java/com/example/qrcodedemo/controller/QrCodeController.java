@@ -1,6 +1,7 @@
 package com.example.qrcodedemo.controller;
 
 import com.example.qrcodedemo.utils.QRCodeUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,6 +66,7 @@ public class QrCodeController {
             QRCodeUtil.encode(code, logoPath, stream, true);
         } catch (Exception e) {
             e.getStackTrace();
+
         } finally {
             if (stream != null) {
                 stream.flush();
